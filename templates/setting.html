@@ -1,0 +1,175 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'assets/images/favicon.png' %}" rel="icon" type="image/png">
+    <title>Settings</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/uikit.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/body.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/tailwind.css' %}">
+
+</head>
+
+<body>
+
+
+       
+
+          
+
+            <div class="container m-auto"> 
+
+                <h1 class="text-2xl leading-none text-gray-900 tracking-tight mt-3"><a href="/">Home</a> / Account Setting for <b>{{user.username}}</b> </h1>
+                
+                <br>
+                <hr>
+                <div class="grid lg:grid-cols-3 mt-12 gap-8">
+                    <div>
+                        <h3 class="text-xl mb-2"> Profile</h3>
+                        <p></p>
+                    </div>
+                    <div class="bg-white rounded-md lg:shadow-lg shadow col-span-2">
+                        
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                       <div class="grid grid-cols-2 gap-3 lg:p-6 p-4">
+                           
+                           
+                            <div class="col-span-2">
+                                <label for=""> Profile Image</label>
+                                <img width="100" height="100" src="{{user_profile.profileimg.url}}" />
+                                <input type="file" name="image" value="" class="shadow-none bg-gray-100">
+                            </div>
+                            <div class="col-span-2">
+                                <label for="about">Bio</label>  
+                                <textarea id="about" name="bio" rows="3"  class="shadow-none bg-gray-100">{{user_profile.bio}}</textarea>
+                            </div> 
+                            <div class="col-span-2">
+                                <label for=""> Location</label>
+                                <input type="text" name="location" value="{{user_profile.location}}" class="shadow-none bg-gray-100">
+                            </div>
+                            <div class="col-span-2">
+                                
+
+                                <label for="x">Choose game 1:</label>
+                                        <select name="x" id="x">
+                                            <option value="Brak">Brak</option>
+                                            <option value="League of Legends">League of Legends</option>
+                                            <option value="Fortnite">Fortnite</option>
+                                            <option value="Minecraft">Minecraft</option>
+                                            <option value="PlayerUnknown's Battlegrounds (PUBG)">PlayerUnknown's Battlegrounds (PUBG)</option>
+                                            <option value="Apex Legends">Apex Legends</option>
+                                            <option value="Counter-Strike: Global Offensive (CS:GO)">Counter-Strike: Global Offensive (CS:GO)</option>
+                                            <option value="Overwatch">Overwatch</option>
+                                            <option value="Call of Duty: Warzone">Call of Duty: Warzone</option>
+                                            <option value="Valorant">Valorant</option>
+                                            <option value="Dota 2">Dota 2</option>
+                                            <option value="Rocket League">Rocket League</option>
+                                            <option value="Rainbow Six Siege">Rainbow Six Siege</option>
+                                            <option value="World of Warcraft">World of Warcraft</option>
+                                            <option value="Among Us">Among Us</option>
+                                            <option value="Grand Theft Auto Online">Grand Theft Auto Online</option>
+                                        </select>
+                            </div>
+
+                            <div class="col-span-2">
+                                
+                                <label for="x1">Choose game 2:</label>
+                                <select name="x1" id="x1">
+                                    <option value="Brak">Brak</option>
+                                    <option value="League of Legends">League of Legends</option>
+                                    <option value="Fortnite">Fortnite</option>
+                                    <option value="Minecraft">Minecraft</option>
+                                    <option value="PlayerUnknown's Battlegrounds (PUBG)">PlayerUnknown's Battlegrounds (PUBG)</option>
+                                    <option value="Apex Legends">Apex Legends</option>
+                                    <option value="Counter-Strike: Global Offensive (CS:GO)">Counter-Strike: Global Offensive (CS:GO)</option>
+                                    <option value="Overwatch">Overwatch</option>
+                                    <option value="Call of Duty: Warzone">Call of Duty: Warzone</option>
+                                    <option value="Valorant">Valorant</option>
+                                    <option value="Dota 2">Dota 2</option>
+                                    <option value="Rocket League">Rocket League</option>
+                                    <option value="Rainbow Six Siege">Rainbow Six Siege</option>
+                                    <option value="World of Warcraft">World of Warcraft</option>
+                                    <option value="Among Us">Among Us</option>
+                                    <option value="Grand Theft Auto Online">Grand Theft Auto Online</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-span-2">
+                                <label for="x2">Choose game 2:</label>
+                            <select name="x2" id="x2">
+                                <option value="Brak">Brak</option>
+                                <option value="League of Legends">League of Legends</option>
+                                <option value="Fortnite">Fortnite</option>
+                                <option value="Minecraft">Minecraft</option>
+                                <option value="PlayerUnknown's Battlegrounds (PUBG)">PlayerUnknown's Battlegrounds (PUBG)</option>
+                                <option value="Apex Legends">Apex Legends</option>
+                                <option value="Counter-Strike: Global Offensive (CS:GO)">Counter-Strike: Global Offensive (CS:GO)</option>
+                                <option value="Overwatch">Overwatch</option>
+                                <option value="Call of Duty: Warzone">Call of Duty: Warzone</option>
+                                <option value="Valorant">Valorant</option>
+                                <option value="Dota 2">Dota 2</option>
+                                <option value="Rocket League">Rocket League</option>
+                                <option value="Rainbow Six Siege">Rainbow Six Siege</option>
+                                <option value="World of Warcraft">World of Warcraft</option>
+                                <option value="Among Us">Among Us</option>
+                                <option value="Grand Theft Auto Online">Grand Theft Auto Online</option>
+                            </select>
+                            
+                            </div>
+
+                            <div class="col-span-2">
+
+                                <label for="skill">Choose your skill level:</label>
+                                <select name="skill" id="skill">
+                                    <option value="Początkujący">Początkujący</option>
+                                    <option value="Średnio Zaawansowany">Średnio Zaawansowany</option>
+                                    <option value="Ekspert">Ekspert</option>
+                                </select> 
+                                    
+                                </div>
+                                
+
+
+                       </div> 
+    
+                       <div class="bg-gray-10 p-6 pt-0 flex justify-end space-x-3">
+                           <button class="p-2 px-4 rounded bg-gray-50 text-red-500"> <a href="/">Cancel</a> </button>
+                           <button type="submit" class="button bg-blue-700"> Save </button>
+                       </div>
+                    </form>
+    
+                    </div>
+                    </div>
+                    <br>
+
+                </div>
+
+            </div>
+            
+        </div>
+
+    </div>
+
+
+    
+
+
+    <script src="{% static 'assets/js/tippy.all.min.js' %}"></script>  
+    <script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/uikit.js' %}"></script>
+    <script src="{% static 'assets/js/simplebar.js' %}"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+
+
+    <script src="{% static '../../unpkg.com/ionicons%405.2.3/dist/ionicons.js' %}"></script>
+</body>
+
+</html>

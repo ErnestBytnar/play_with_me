@@ -1,0 +1,358 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'favicon.png' %}" rel="icon" type="image/png">
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/uikit.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/body.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/tailwind.css' %}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+            <header>
+                <div class="header_inner">
+                    <form action="/search" method="POST">
+                    {% csrf_token %}
+                    <div class="left-side">
+                        <!-- Logo -->
+                        <div id="logo" class=" uk-hidden@s">
+                            <a href="home.html">
+                                <b><h1 style="text-transform: uppercase;">Play With Me</h1></b>
+                            </a>
+                        </div>
+
+                       
+
+                       
+                            <input type="text" name="username" placeholder="Search for username..">&nbsp; &nbsp;
+                            <button type="submit"><i class="fa fa-search fa-1x"></i></button>
+                       
+
+                    </div>
+                    </form>
+                    <div class="right-side lg:pr-4">
+                        
+                        <a href="#"
+                            class="bg-pink-500 flex font-bold hidden hover:bg-pink-600 hover:text-white inline-block items-center lg:block max-h-10 mr-4 px-4 py-2 rounded shado text-white">
+                            <ion-icon name="add-circle" class="-mb-1
+                             mr-1 opacity-90 text-xl uilus-circle"></ion-icon> Create Event
+                        </a>
+                        
+                        <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small" class="header_dropdown">
+    
+                            
+                            <div class="px-4 py-3 -mx-5 -mt-4 mb-5 border-b">
+                                <h4>Create Event</h4>
+                            </div>
+    
+                            <!-- notification contents -->
+                            <div class="flex justify-center flex-center text-center">
+    
+                                <div class="flex flex-col choose-upload text-center">
+                                   
+                                    
+
+                                    <form action="upload" method="POST" enctype="multipart/form-data" >
+                                    {% csrf_token %}
+                                    
+
+                                    <div>
+                                        
+                                        <label for="games">Caption:</label>
+                                        <textarea class="button soft-warning small" name="caption" placeholder="don't forget to type your nickname wnich you use in game" ></textarea>
+                                        <br>
+                                        
+                                        <label for="start">Start date:</label>
+
+                                <input type="date" id="start" name="trip-start"
+                                        value="2023-06-08"
+                                        min="2023-01-01" max="2023-12-31">
+                                    <label for="games">Choose game:</label>
+
+
+
+                                        <select name="games" id="games">
+                                            <option value="Brak">Brak</option>
+                                            <option value="League of Legends">League of Legends</option>
+                                            <option value="Fortnite">Fortnite</option>
+                                            <option value="Minecraft">Minecraft</option>
+                                            <option value="PlayerUnknown's Battlegrounds (PUBG)">PlayerUnknown's Battlegrounds (PUBG)</option>
+                                            <option value="Apex Legends">Apex Legends</option>
+                                            <option value="Counter-Strike: Global Offensive (CS:GO)">Counter-Strike: Global Offensive (CS:GO)</option>
+                                            <option value="Overwatch">Overwatch</option>
+                                            <option value="Call of Duty: Warzone">Call of Duty: Warzone</option>
+                                            <option value="Valorant">Valorant</option>
+                                            <option value="Dota 2">Dota 2</option>
+                                            <option value="Rocket League">Rocket League</option>
+                                            <option value="Rainbow Six Siege">Rainbow Six Siege</option>
+                                            <option value="World of Warcraft">World of Warcraft</option>
+                                            <option value="Among Us">Among Us</option>
+                                            <option value="Grand Theft Auto Online">Grand Theft Auto Online</option>
+                                        </select>
+
+                                        <label for="times">Time:</label>
+                                        <select name="times" id="times">
+                                            <option>8:00</option>
+                                            <option>8:30</option>
+                                            <option>9:00</option>
+                                            <option>9:30</option>
+                                            <option>10:00</option>
+                                            <option>10:30</option>
+                                            <option>11:00</option>
+                                            <option>11:30</option>
+                                            <option>12:00</option>
+                                            <option>12:30</option>
+                                            <option>13:00</option>
+                                            <option>13:30</option>
+                                            <option>14:00</option>
+                                            <option>14:30</option>
+                                            <option>15:00</option>
+                                            <option>15:30</option>
+                                            <option>16:00</option>
+                                            <option>16:30</option>
+                                            <option>17:00</option>
+                                            <option>17:30</option>
+                                            <option>18:00</option>
+                                            <option>18:30</option>
+                                            <option>19:00</option>
+                                            <option>19:30</option>
+                                            <option>20:00</option>
+                                            <option>20:30</option>
+                                            <option>21:00</option>
+                                            <option>21:30</option>
+                                            <option>22:00</option>
+                                            <option>22:30</option>
+                                            <option>23:00</option>
+                                            <option>23:30</option>
+                                            <option>24:00</option>
+                                            <option>0:30</option>
+                                            <option>1:00</option>
+                                            <option>1:30</option>
+                                            <option>2:00</option>
+                                            <option>2:30</option>
+                                            <option>3:00</option>
+                                            <option>3:30</option>
+                                            <option>4:00</option>
+                                            <option>4:30</option>
+                                            <option>5:00</option>
+                                            <option>5:30</option>
+                                            <option>6:00</option>
+                                            <option>6:30</option>
+                                            <option>7:00</option>
+                                            <option>7:30</option>
+                                    </select>
+
+                                    <label for="communicator">Communicator:</label>
+                                        <select name="communicator" id="communicator">
+                                            <option>Discord</option>
+                                            <option>Teamspeak</option>
+                                            
+                                    </select>
+
+                                        <button class="button bg-blue-700" type="submit" >Create</button>
+                                    </div>
+                                    
+                                    </form>
+
+                                    
+                                </div>
+    
+                                
+    
+                            </div>
+                            
+                        </div>
+                        
+                         
+
+                       
+
+                        <!-- profile -->
+
+                        <a href="#">
+                            <img src="{{user_profile.profileimg.url}}" class="header-avatar" alt="">
+                        </a>
+                        <div uk-drop="mode: click;offset:9" class="header_dropdown profile_dropdown border-t">
+                            <ul>
+                                <li><a href="/settings"> Account setting </a> </li>
+                                <li><a href="logout"> Log Out</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+
+            <div class="container m-auto">
+
+                
+
+                <div class="lg:flex justify-center lg:space-x-10 lg:space-y-0 space-y-5">
+
+                    
+                    <div class="space-y-5 flex-shrink-0 lg:w-7/12">
+
+                       
+
+                        {% for post in posts reversed %}
+                        <div class="bg-white shadow rounded-md  -mx-2 lg:mx-0">
+    
+                           
+                            <div class="flex justify-between items-center px-4 py-3">
+                                <div class="flex flex-1 items-center space-x-4">
+                                    
+                                    <span class="block font-semibold "><a href="/profile/{{post.user}}">@{{post.user}}</a></span>
+                                </div>
+                              <div>
+                                <a href="#"> <i class="icon-feather-more-horizontal text-2xl hover:bg-gray-200 rounded-full p-2 transition -mr-1 "></i> </a>
+                                <div class="bg-white w-56 shadow-md mx-auto p-2 mt-12 rounded-md text-gray-500 hidden text-base border border-gray-100  " uk-drop="mode: hover;pos: top-right">
+                              
+                                    <ul class="space-y-1">
+                                      
+                                      <li> 
+                                          <a href="#" class="flex items-center px-3 py-2 text-red-500 hover:bg-red-100 hover:text-red-500 rounded-md ">
+                                           <i class="uil-trash-alt mr-1"></i>  Delete Post
+                                          </a> 
+                                      </li>
+                                    </ul>
+                                
+                                </div>
+                              </div>
+                            </div>
+    
+                            <div uk-lightbox>
+                                 
+                            </div>
+                            
+    
+                            <div class="py-3 px-4 space-y-3"> 
+
+
+                                <label>Data wydarzenia : 
+                                    {{post.description}}
+                                 </label>
+                                 <label>Gra : 
+                                    {{post.description2}}
+                                 </label>
+                                 <label> Godzina spotkania : 
+                                    {{post.description3}}
+                                 </label>
+                                 <label> Komunikator : 
+                                    {{post.description4}}
+                                 </label>
+                               
+                                <div class="flex space-x-4 lg:font-bold">
+                                    <a href="/like-post?post_id={{post.id}}" class="flex items-center space-x-2">
+                                        <div class="p-2 rounded-full text-black">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="25" height="25" class="">
+                                                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
+                                            </svg>
+                                            {% if post.no_of_likes == 0 %}
+                                            <p>No likes</p>
+                                            {% elif post.no_of_likes == 1 %}
+                                            <p>Liked by {{post.no_of_likes}} person</p>
+                                            {% else %}
+                                            <p>Liked by {{post.no_of_likes}} people</p>
+                                            {% endif %}
+                                        </div>
+                                        
+                                    </a>
+                                    
+                                    
+                                </div>
+                               
+
+                                <p>
+                                    <a href="/profile/{{post.user}}"><strong>{{post.user}}</strong></a> {{post.caption}}
+                                </p>
+
+                                
+    
+                            </div>
+    
+                        </div>
+                        {% endfor %}
+    
+                        
+
+
+                    </div>
+
+                   
+                    <div class="lg:w-5/12">
+
+                        <div class="bg-white  shadow-md rounded-md overflow-hidden">
+
+                            <div class="bg-gray-50  border-b border-gray-100 flex items-baseline justify-between py-4 px-6 ">
+                                <h2 class="font-semibold text-lg">Users You Can Play With</h2>
+                                
+                            </div>
+                           
+                            <div class="divide-gray-300 divide-gray-50 divide-opacity-50 divide-y px-4 ">
+
+                                {% for suggestion in suggestions_username_profile_list %}
+                                <div class="flex items-center justify-between py-3">
+                                    <div class="flex flex-1 items-center space-x-4">
+                                        <a href="/profile/{{suggestion.user}}">
+                                            <img src="{{suggestion.profileimg.url}}" class="bg-gray-200 rounded-full w-10 h-10">
+                                        </a>
+                                        <div class="flex flex-col">
+                                            <span class="block capitalize font-semibold"> {{suggestion.user}} </span>
+                                            <span class="block capitalize text-sm"> {{suggestion.bio}} </span>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href="/profile/{{suggestion.user}}" class="border border-gray-200 font-semibold px-4 py-1 rounded-full hover:bg-pink-600 hover:text-white hover:border-pink-600 "> View User </a>
+                                </div>
+                                {% endfor %}
+
+                            </div>
+
+                        </div>
+
+                      
+
+                    </div>
+
+                </div>               
+          
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="{% static 'assets/js/tippy.all.min.js' %}"></script>  
+    <script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/uikit.js' %}"></script>
+    <script src="{% static 'assets/js/simplebar.js' %}"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+
+
+    <script src="{% static '../../unpkg.com/ionicons%405.2.3/dist/ionicons.js' %}"></script>
+</body>
+
+
+</html>
